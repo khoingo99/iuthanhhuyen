@@ -144,7 +144,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#140810;font-family:
      ============================================================ -->
 <script>
   const PER_NAME   = "Thanh Huyền";
-  const PER_MSG    = "Làm bạn đời của anh nhaa";
+  const PER_MSG    = "";
   const PER_PHOTOS = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg",];
   const PER_AUDIO  = "mp3.mp3";
   window.addEventListener('error', e=>{ try{ document.body.insertAdjacentHTML('beforeend','<div style="position:fixed;left:8px;bottom:8px;z-index:999;color:#fff;background:#900;padding:6px;font-size:11px;max-width:90%;font-family:monospace">ERR:'+ (e.message||e)+' @'+ (e.filename||'')+':'+ (e.lineno||'')+'</div>'); }catch(_){ } });
@@ -214,17 +214,17 @@ html,body{width:100%;height:100%;overflow:hidden;background:#140810;font-family:
 'use strict';
 const PERSON     = ((typeof PER_NAME !== 'undefined' ? PER_NAME : 'em')+'').trim() || 'em';
 const CUSTOM     = ((typeof PER_MSG  !== 'undefined' ? PER_MSG  : '')+'').trim();
-const HAS_CUSTOM = CUSTOM.length > 0;
+const HAS_CUSTOM = CUSTOM.length === 0;
 const PHOTOS     = Array.isArray(typeof PER_PHOTOS !== 'undefined' ? PER_PHOTOS : []) ? PER_PHOTOS.filter(Boolean) : [];
 const AUDIO_URL  = (typeof PER_AUDIO !== 'undefined' && PER_AUDIO) ? PER_AUDIO : 'https://www.genspark.ai/api/files/s/hC7dd2CS';
 const DEFAULT_FINAL_IMG = 'https://www.genspark.ai/api/files/s/FsE2fav9';
 
 document.getElementById('hdrName').textContent = PERSON;
 document.getElementById('finalText').textContent = 'Yêu ' + PERSON + ' nhiều lắm ❤️';
-document.getElementById('finalSub').textContent  = '— Cảm ơn ' + PERSON + ' đã cho anh cơ hội —';
+document.getElementById('finalSub').textContent  = '— Cảm ơn em đã cho anh cơ hội —';
 if(HAS_CUSTOM){
   const cm = document.getElementById('customMsg');
-  cm.textContent = '" ' + CUSTOM + ' "';
+  cm.textContent = 'Làm bạn đời của anh nhaaaa!';
   cm.style.display = 'block';
 }
 const audio = document.getElementById('audio');
